@@ -2,8 +2,8 @@
 Логическое структурирование бота**
 
 ### Установка:
-`git clone https://github.com/ymoth/user-bot-structure` <br>
-Только для Python 3.10+
+`git clone https://github.com/ymoth/user-bot-structure/tree/3.8` <br>
+Python3.0+
 # Настройка
 ****
 

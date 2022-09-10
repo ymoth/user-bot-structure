@@ -1,5 +1,6 @@
 import asyncio
 import contextlib
+import typing
 
 import tortoise
 
@@ -43,7 +44,7 @@ class DefaultClient(tortoise.Model):
         settings = await ClientSettings.create(user_id=self.user_id)
         return settings
 
-    async def coroutine_running(self) -> dict[str, ...] | None:
+    async def coroutine_running(self) -> None:
         asyncio.create_task(application.coroutine_run(self.access_token, build_autodoc=False), name=str(self.user_id))
         return None
 

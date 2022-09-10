@@ -1,4 +1,5 @@
 import dataclasses
+import typing
 
 import vkquick
 
@@ -20,10 +21,10 @@ class PermissionFilter(vkquick.BaseFilter):
         return None
 
     # Получение команд, которые доступны пользователю
-    def get_permission_commands(self) -> list[vkquick.Command]:
+    def get_permission_commands(self) -> typing.List[vkquick.Command]:
         from src.misc import application
 
-        commands: list[vkquick.Command] = []
+        commands: typing.List[vkquick.Command] = []
         for package in application.packages:
             # Проверка пакета <<application>>, если фильтр является нужным, пробегаемся по доступу.
             if isinstance(package.filter, PermissionFilter):

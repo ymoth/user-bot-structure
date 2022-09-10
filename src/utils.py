@@ -1,5 +1,6 @@
 import re
 import time
+import typing
 
 import vkquick
 
@@ -12,7 +13,7 @@ from src.models.user import DefaultClient
 
 
 # Получение токена из <<string_object>> | regex: (vk1[A-Za-z0-9_,-.]+|[a-f\d]{85})
-def prepare_access_token(string_object: str) -> str | None:
+def prepare_access_token(string_object: str) -> typing.Optional[str]:
     return re.search(r"(vk1[A-Za-z0-9_,-.]+|[a-f\d]{85})", string_object).group(0)
 
 
